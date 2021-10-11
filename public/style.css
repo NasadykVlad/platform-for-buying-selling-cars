@@ -1,5 +1,5 @@
-body {
-  background-image: url("./body-background.jpg");
+* {
+  font-family: "Noto Sans Mono", monospace;
 }
 
 /*# sourceMappingURL=style.css.map */
