@@ -1,40 +1,91 @@
 import React from 'react'
 import './Landing.css'
-import SelectedCarBrand from "../SelectCarBrand";
+import PropTypes from 'prop-types'
+import Button from '@mui/material/Button'
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-export default function Landing(props) {
+export default class Landing extends React.Component {
+
+    state = {
+        display: false,
+        brand: '',
+        url: '',
+    }
+
+    displayList = () => {
+        const {display} = this.state;
+
+        if (!this.state.brand) {
+            this.setState({display: !display})
+        }
+
+    }
+
+    getBrand = (car) => {
+        let {brand, url} = car;
+        this.setState({brand: brand, url: url, display: false})
+    }
+
+    goToPlatform = () => {
+    console.log('go')
+    }
+
+    goBacktoSelect = () => {
+        this.setState({brand: '', url: '', display: false})
+    }
+
+    render() {
         return (
             <div className="Landing">
                 <div className="select_brand">
                     <div className="select_brand_top">
-                        <div className="select_brand_top_header">
-                            <span>Select the car brand</span>
-                        </div>
-                        <div className="arrow_picker">
-                            <div className="arrow_picker_up">
-
-                            </div>
-                            <div className="arrow_picker_down">
-
-                            </div>
+                        <div onClick={this.displayList} className="select_brand_top_header">
+                            { this.state.brand ? <h1>{this.state.brand}</h1> : <Button className="btn_show" variant="contained">Click to show car brand</Button>}
                         </div>
                     </div>
 
-                    <div className="select_brand_bottom">
-                        <ul>
-                            {
-                                props.carsBrands.map((brand) => {
-                                    return (
-                                        <SelectedCarBrand brandName={brand.brand} key={brand.id}/>
-                                    )
-                                })
-                            }
-                        </ul>
+                    {this.state.display === true ?
+                        <div className="selects_brand_bottom">
+                            <ul>
+                                <Box sx={{ minWidth: 120 }}>
+                                    <FormControl fullWidth>
+                                        <InputLabel id="demo-simple-select-label">Brand</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={this.state.brand}
+                                            label="Brand">
+                                            {
+                                                this.props.carsBrands.map((brand) => {
+                                                    return (
+                                                        <MenuItem value={brand.brand} onClick={() => this.getBrand(brand)} key={brand.id} >
+                                                            {brand.brand}
+                                                        </MenuItem>
+                                                    )
+                                                })
+                                            }
+                                        </Select>
+                                    </FormControl>
+                                </Box>
+
+                            </ul>
+                        </div>
+                        : false}
                     </div>
-                </div>
 
-                <button>Go to the store of the selected car brand</button>
-
+                {this.state.brand && !this.state.display ?  (<Button onClick={this.goToPlatform} className="btn_selected" variant="contained">selected car brand</Button>) : false}
+                {this.state.brand && !this.state.display ?  (<Button onClick={this.goBacktoSelect} className="btn" variant="contained">back to brands</Button>) : false}
             </div>
-        )
+            )
+        }
 }
+
+Landing.propTypes = {
+    carsBrands: PropTypes.arrayOf(PropTypes.object)
+}
+
+
