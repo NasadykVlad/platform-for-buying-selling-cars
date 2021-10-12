@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "hot-burgers",
+  "name": "platform-for-buying-selling-cars",
   "builds": [
     {
       "src": "package.json",

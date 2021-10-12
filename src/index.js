@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App';
-import carsBrands from "./data/car-brands";
-import Landing from "./components/Landing/Landing";
+import Router from './components/Router/Router'
 
 ReactDOM.render(
   <React.StrictMode>
-      {/*<Landing carsBrands={carsBrands}/>*/}
-    <App />
+    <Router />
   </React.StrictMode>,
   document.getElementById('root')
 );

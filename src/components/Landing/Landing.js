@@ -31,10 +31,11 @@ export default class Landing extends React.Component {
     }
 
     goToPlatform = () => {
-    console.log('go')
+    const {url} = this.state;
+    this.props.history.push(`/cars/${url}`)
     }
 
-    goBacktoSelect = () => {
+    goBackToSelect = () => {
         this.setState({brand: '', url: '', display: false})
     }
 
@@ -78,7 +79,7 @@ export default class Landing extends React.Component {
                     </div>
 
                 {this.state.brand && !this.state.display ?  (<Button onClick={this.goToPlatform} className="btn_selected" variant="contained">selected car brand</Button>) : false}
-                {this.state.brand && !this.state.display ?  (<Button onClick={this.goBacktoSelect} className="btn" variant="contained">back to brands</Button>) : false}
+                {this.state.brand && !this.state.display ?  (<Button onClick={this.goBackToSelect} className="btn" variant="contained">back to brands</Button>) : false}
             </div>
             )
         }
