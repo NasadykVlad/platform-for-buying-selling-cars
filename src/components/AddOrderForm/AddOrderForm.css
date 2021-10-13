@@ -1,0 +1,31 @@
+form {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  background-image: url("https://lh3.googleusercontent.com/proxy/HvkXun_UYSonDSezwmlcJCFcRldYsSl_hfZyBWmDshGJiI1y_ASCmnkfcbRUKYzjDqdPKAffxGsvfv0Z6GQs84Mqr3Kk");
+  border-radius: 20px;
+}
+form input {
+  width: 20%;
+  height: 25px;
+  padding: 1%;
+  margin: 2% 1% 3% 1%;
+  border: none;
+}
+form input:active {
+  border: none;
+}
+form select {
+  width: 22%;
+  height: 36px;
+  padding: 1%;
+  margin: 2% 1% 3% 1%;
+  border: none;
+}
+form .MuiButton-root {
+  margin-bottom: 2%;
+}
+
+/*# sourceMappingURL=AddOrderForm.css.map */

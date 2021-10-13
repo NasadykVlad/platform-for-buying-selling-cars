@@ -5,14 +5,31 @@ import Order from './Order/Order'
 import PanelAdmin from './PanelAdmin/PanelAdmin'
 
 
-function App() {
-  return (
-      <div className="App">
-        <Header />
-        <Order />
-        <PanelAdmin />
-      </div>
-  );
-}
 
-export default App;
+export default class App extends React.Component {
+
+    state = {
+        carModel: {},
+        order: {}
+    }
+
+    addCarModel = (carModel) => {
+        console.log(carModel)
+        // copy model car
+        let carModels = {...this.state.carModel}
+        // add new model in variable
+        carModels = carModel;
+        // write new object model to state
+        this.setState({carModels})
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <Header/>
+                <Order/>
+                <PanelAdmin addCarModel={this.addCarModel}/>
+            </div>
+        );
+}}
+
