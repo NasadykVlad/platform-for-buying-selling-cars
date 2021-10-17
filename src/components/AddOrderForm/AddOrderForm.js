@@ -45,7 +45,7 @@ export default class AddOrderForm extends React.Component {
                         <option defaultValue="" disabled selected>Engine volume:</option>
                         <option value="2.5">2.5</option>
                         <option value="3">3</option>
-                        <option value="4.4">4</option>
+                        <option value="4.4">4.4</option>
                     </select>
                     <input ref={this.runRef} type="number" placeholder="Run"/>
                     <select ref={this.fuelRef} name="Fuel" id="#">

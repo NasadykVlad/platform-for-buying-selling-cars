@@ -1,0 +1,39 @@
+.OtherCar {
+  width: 100%;
+  display: flex;
+  margin: 1rem;
+  background-color: #00d0ff17;
+  list-style-type: none;
+}
+.OtherCar:first-child {
+  margin-top: 4rem;
+}
+.OtherCar img {
+  width: 100%;
+}
+.OtherCar .picture {
+  width: 55%;
+  display: flex;
+}
+.OtherCar .info-car {
+  width: 45%;
+  background-color: #ffb64d;
+}
+.OtherCar .info-car .first-letter {
+  display: block;
+  color: white;
+  margin-left: 1rem;
+}
+.OtherCar .info-car .first-letter span {
+  font-size: larger;
+  font-weight: 700;
+}
+.OtherCar .info-car .first-letter .price {
+  color: #005e2a9e;
+}
+
+.Menu {
+  height: fit-content !important;
+}
+
+/*# sourceMappingURL=OtherCar.css.map */

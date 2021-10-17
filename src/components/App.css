@@ -4,3 +4,10 @@
   background: #868686;
   padding: 2%
 }
+
+.App .CarModels {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+

@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header/Header'
 import Order from './Order/Order'
 import PanelAdmin from './PanelAdmin/PanelAdmin'
+import OtherCar from './carModels/carModels'
 
 
 
@@ -14,7 +15,6 @@ export default class App extends React.Component {
     }
 
     addCarModel = (carModel) => {
-        console.log(carModel)
         // copy model car
         let carModels = {...this.state.carModel}
         // add new model in variable
@@ -23,12 +23,24 @@ export default class App extends React.Component {
         this.setState({carModels})
     }
 
+    loadAllCarModels = (carModels) => {
+        this.setState({carModel: carModels})
+        console.log(this.state.carModel)
+    }
+
     render() {
         return (
             <div className="App">
-                <Header/>
+                <div className="Menu">
+                    <Header/>
+                    <ul className="CarModels">
+                        {Object.keys(this.state.carModel).map(key => {
+                            return <OtherCar key={key} index={key} details={this.state.carModel[key]}/>
+                        })}
+                    </ul>
+                </div>
                 <Order/>
-                <PanelAdmin addCarModel={this.addCarModel}/>
+                <PanelAdmin addCarModel={this.addCarModel} loadAllCarModels={this.loadAllCarModels}/>
             </div>
         );
 }}

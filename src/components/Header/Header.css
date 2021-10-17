@@ -1,40 +1,43 @@
-.Header {
+.Menu {
   width: 39%;
   height: 91.8vh;
   background-color: #F3F2F4;
 }
-.Header-head {
+.Menu .Header {
+  height: 248px;
+}
+.Menu .Header-head {
   height: 200px;
   background-image: url("https://oboitut.com/uploads/posts/2019-09/thumbs/oboitut.com_1569435452.jpg");
   background-size: 190px;
   padding: 7%;
 }
-.Header-head img {
+.Menu .Header-head img {
   width: 20px;
   height: auto;
 }
-.Header-head #first-star {
+.Menu .Header-head #first-star {
   margin-left: 6px;
 }
-.Header-head-text {
+.Menu .Header-head-text {
   width: 100%;
 }
-.Header-head-text span {
+.Menu .Header-head-text span {
   width: 100%;
   display: inline-block;
   color: white;
 }
-.Header-head-text span span {
+.Menu .Header-head-text span span {
   display: inline-block;
   color: red;
 }
-.Header-head-text .slog-header {
+.Menu .Header-head-text .slog-header {
   font-size: 25px;
   font-weight: bold;
   text-align: center;
   margin: 7% 0;
 }
-.Header-rating {
+.Menu .Header-rating {
   width: fit-content;
   display: flex;
   align-items: center;
@@ -44,7 +47,7 @@
   border-radius: 55px;
   padding: 2px 10px;
 }
-.Header-rating:hover {
+.Menu .Header-rating:hover {
   transition: 1s;
   opacity: 1;
   background-color: #737373;

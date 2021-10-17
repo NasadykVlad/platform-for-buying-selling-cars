@@ -1,0 +1,37 @@
+.OtherCar {
+  width: 100%;
+  display: flex;
+  margin: 1rem;
+  background-color: #00d0ff17;
+  list-style-type: none;
+  &:first-child {
+    margin-top: 4rem;
+  }
+  & img {
+    width: 100%;
+  }
+  & .picture {
+    width: 55%;
+    display: flex;
+  }
+  & .info-car {
+    width: 45%;
+    background-color: #ffb64d;
+    & .first-letter {
+      display: block;
+      color: white;
+      margin-left: 1rem;
+      & span {
+        font-size: larger;
+        font-weight: 700;
+      }
+      & .price {
+        color: #005e2a9e;
+      }
+    }
+  }
+}
+
+.Menu {
+  height: fit-content!important;
+}

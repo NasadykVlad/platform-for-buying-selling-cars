@@ -25,7 +25,7 @@ form select {
   border: none;
 }
 form .MuiButton-root {
-  margin-bottom: 2%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=AddOrderForm.css.map */

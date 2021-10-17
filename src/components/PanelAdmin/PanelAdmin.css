@@ -6,5 +6,10 @@
 .PanelAdmin h2 {
   text-align: center;
 }
+.PanelAdmin .button {
+  width: 95%;
+  margin-top: 2%;
+  margin-left: 2.6%;
+}
 
 /*# sourceMappingURL=PanelAdmin.css.map */
